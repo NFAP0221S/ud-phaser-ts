@@ -11,6 +11,7 @@ const config = {
     },
   },
   scene: {
+    // 프리로드에 설정된 함
     preload: preload,
     create: create,
   },
@@ -19,6 +20,8 @@ const config = {
 new Phaser.Game(config);
 
 function preload() {
+  // key 설정
+  // 받아올 이미지
   this.load.image("sky", "assets/sky.png");
 }
 
