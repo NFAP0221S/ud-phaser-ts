@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 const config = {
+  // AUTO는 webGL로 최적화 렌더링
   type: Phaser.AUTO,
   width: 800,
   height: 600,
@@ -11,7 +12,8 @@ const config = {
     },
   },
   scene: {
-    // 프리로드에 설정된 함
+    // preload에 설정된 함수를 받아와 preload함
+    // create 는 설정된 함수의 키를 실행
     preload: preload,
     create: create,
   },
@@ -29,5 +31,5 @@ function create() {
   // x - 400
   // y - 300
   // key - sky
-  this.add.image(config.width / 2, config.height / 2, "sky");
+  this.add.image(0, 0, "sky").setOrigin(0);
 }
